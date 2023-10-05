@@ -22,6 +22,16 @@ jobs:
       - name: Deploy to minikube
         run:
           kubectl apply -f k8s-node-app.yaml
+
+      - name: Check Issue
+        run: |
+          minikube service list
+          kubectl get pods
+          kubectl describe service nodejs-app
+          minikube dashboard
+          minikube service nodejs-app --url
+        shell: /usr/bin/bash -e {0}
+
       - name: Test service URLs
         run: |
           minikube service list
