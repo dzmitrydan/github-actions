@@ -32,6 +32,6 @@ spec:
     app: nodejs-app
   type: NodePort
   ports:
-    - name: http
-      targetPort: 3000
-      port: 80
+  - name: http
+    targetPort: 3000
+    port: 80
